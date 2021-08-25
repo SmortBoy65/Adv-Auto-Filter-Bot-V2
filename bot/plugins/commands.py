@@ -141,7 +141,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/CrazyBotsz"
+                                    'Join Our Channel ❤️', url='https://t.me/AAFchannel'
                                 )
                         ]
                     ]
