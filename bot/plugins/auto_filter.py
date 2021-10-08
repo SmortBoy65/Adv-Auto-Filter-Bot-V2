@@ -1,6 +1,7 @@
 import re
 import logging
 import asyncio
+import requests
 
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
@@ -118,10 +119,11 @@ async def auto_filter(bot, update):
                 
                 bot_ = FIND.get("bot_details")
                 file_link = f"https://t.me/{bot_.username}?start={unique_id}"
+                res = request.get(f'https://droplink.co/api?api=a92a1ab86c6b637ebaa071d28184493bf509f9a0&url={file_link}').json()['shortenedUrl']
             
             results.append(
                 [
-                    InlineKeyboardButton(button_text, url=file_link)
+                    InlineKeyboardButton(button_text, url=res)
                 ]
             )
         
