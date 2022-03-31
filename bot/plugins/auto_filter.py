@@ -22,7 +22,8 @@ async def auto_filter(bot, update):
     A Funtion To Handle Incoming Text And Reply With Appropriate Results
     """
     group_id = update.chat.id
-
+    if group_id == -1001447281787:
+        return
     if re.findall(r"((^\/|^,|^\.|^[\U0001F600-\U000E007F]).*)", update.text):
         return
     
